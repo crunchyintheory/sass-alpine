@@ -6,7 +6,8 @@ RUN case $TARGETARCH in \
         amd64) export PLATFORM=x64 ;; \
     esac ; \
     wget -O - https://github.com/sass/dart-sass/releases/download/1.83.0/dart-sass-1.83.0-$TARGETOS-$PLATFORM.tar.gz | tar xz
-RUN mv dart-sass/sass /bin
+RUN mv dart-sass/src/sass.snapshot /lib
+ADD ./sass /bin/sass
 RUN rm -r dart-sass
 RUN apk del wget
     
