@@ -1,4 +1,4 @@
-FROM alpine
+FROM ghcr.io/dart-musl/dart:3.6
 RUN apk add wget
 ARG TARGETARCH TARGETOS
 RUN case $TARGETARCH in \
