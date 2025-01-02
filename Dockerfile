@@ -1,4 +1,4 @@
-FROM ghcr.io/dart-musl/dart:3.6
+FROM ghcr.io/dart-musl/dart:3
 RUN apk add wget
 ARG TARGETARCH TARGETOS
 RUN case $TARGETARCH in \
@@ -10,4 +10,5 @@ RUN mv dart-sass/src/sass.snapshot /lib
 ADD ./sass /bin/sass
 RUN rm -r dart-sass
 RUN apk del wget
+CMD ["sass"]
     
